@@ -59,9 +59,10 @@ export const UsersStats = () => {
         <UsersList users={users} 
                    firstName={setFirstName}
                    lastName={setLastName}
-                   email={email}
-                   gender={gender}
-                   ipAdress={ipAdress}
+                   email={setEmail}
+                   gender={setGender}
+                   ipAdress={setIpAdress}
+                   loading={setLoading}
                     />
 
       </div>
