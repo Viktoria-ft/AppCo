@@ -32,7 +32,7 @@ export const UsersStats = () => {
   }
 
   const userCreateRow = () => {
-    // Send POST request to 'books/create' endpoint
+  
     axios
       .post('http://localhost:3000/users/create', {
         firstName: firstName,
@@ -44,11 +44,9 @@ export const UsersStats = () => {
       .then(res => {
         console.log(res.data)
 
-        // Fetch all books to refresh
-        // the books on the bookshelf list
         fetchUsers()
       })
-      .catch(error => console.error(`There was an error creating the ${title} book: ${error}`))
+      .catch(error => console.error(`There was an error creating the ${firstName} user: ${error}`))
   }
 
 
