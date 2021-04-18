@@ -28,28 +28,21 @@ export const UsersList = (props) => {
 
         <tbody className="table-body">
           {props.users.length > 0 ? (
-            props.userss.map((el, id, index) => (
+            props.users.map((el, id, index) => (
               <User
                 key={id}
                 user={el}
-                position={index + 1}
-                handleUserRemove={props.handleUserRemove}
+                position={index + 1}                
               />
               )
-            )
-          ) : (
-            <tr className="table-row">
-              <td className="table-item" style={{ textAlign: 'center' }} colSpan={6}>There are no users to show.</td>
-            </tr>
-          )
-        }
+            )                      
+          
         </tbody>
     </table>
-  )
+  );
 }
 
 UsersList.propTypes = {
-     modalHeader: PropTypes.string.isRequired,
      id: PropTypes.number.isRequired,
      firstName: PropTypes.string.isRequired,
      lastName: PropTypes.string.isRequired,

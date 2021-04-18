@@ -38,35 +38,3 @@ exports.usersCreate = async (req, res) => {
     })
 }
 
-// Remove specific user
-exports.usersDelete = async (req, res) => {
-  // Find specific user in the database and remove it
-  knex('users')
-    .where('id', req.body.id) // find correct record based on id
-    .del() // delete the record
-    .then(() => {
-      // Send a success message in response
-      res.json({ message: `User ${req.body.id} deleted.` })
-    })
-    .catch(err => {
-      // Send a error message in response
-      res.json({ message: `There was an error deleting ${req.body.id} user: ${err}` })
-    })
-}
-
-// Remove all userss on the list
-exports.usersReset = async (req, res) => {
-  // Remove all users from database
-  knex
-    .select('*') // select all records
-    .from('users') // from 'books' table
-    .truncate() // remove the selection
-    .then(() => {
-      // Send a success message in response
-      res.json({ message: 'User list cleared.' })
-    })
-    .catch(err => {
-      // Send a error message in response
-      res.json({ message: `There was an error resetting user list: ${err}.` })
-    })
-}

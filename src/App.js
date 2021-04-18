@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import './App.scss';
 import Main from './components/Main/Main'
+import {UsersStats} from './components/Stats/Stats'
 
 // import logo from './logo.svg';
 // import './App.css';
@@ -21,7 +22,7 @@ export default function BasicExample() {
             <Link to="/">Main</Link>
           </li>
           <li>
-            <Link to="/about">Stats</Link>
+            <Link to="/stats">Stats</Link>
           </li>
           <li>
             <Link to="/charts">Charts</Link>
@@ -35,7 +36,7 @@ export default function BasicExample() {
             <Main />
           </Route>
           <Route path="/stats">
-            <Stats />
+            <UsersStats />
           </Route>
           <Route path="/charts">
             <Charts />
@@ -47,13 +48,15 @@ export default function BasicExample() {
 }
 
 
-function Stats() {
-  return (
-    <div>
-      <h2>Stats</h2>
-    </div>
-  );
-}
+// function Header() {
+//   return (
+//     <div>
+//       <h2>
+//         Header
+//       </h2>
+//     </div>
+//   );
+// }
 
 function Charts() {
   return (
